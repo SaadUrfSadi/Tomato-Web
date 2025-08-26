@@ -1,38 +1,42 @@
 import React, { useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/frontend_assets/assets";
-
-function Navbar() {
+import {Link} from 'react-router-dom';
+function Navbar({setShowLogin}) {
   //   console.log(assets);
   const [menu, setMenu] = useState("home");
   return (
     <div className="navbar">
       <img src={assets.logo} alt="" className="logo" />
       <ul className="navbar_menu">
-        <li
+        <Link
+          to="/"
           onClick={() => setMenu("home")}
           className={menu === "home" ? "active" : ""}
         >
           Home
-        </li>
-        <li
+        </Link>
+        <a
+          href="#explore-menu"
           onClick={() => setMenu("menu")}
           className={menu === "menu" ? "active" : ""}
         >
           Menu
-        </li>
-        <li
+        </a>
+        <a
+          href="#app-dawnload"
           onClick={() => setMenu("mobile-app")}
           className={menu === "mobile-app" ? "active" : ""}
         >
           Mobile-app
-        </li>
-        <li
+        </a>
+        <a
+          href="#footer"
           onClick={() => setMenu("contact-us")}
           className={menu === "contact-us" ? "active" : ""}
         >
           Contact Us
-        </li>
+        </a>
       </ul>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
@@ -40,7 +44,7 @@ function Navbar() {
           <img src={assets.basket_icon} alt="" />
           <div className="dot"></div>
         </div>
-        <button>Signin</button>
+        <button onClick={()=> setShowLogin(true)}>Signin</button>
       </div>
     </div>
   );
