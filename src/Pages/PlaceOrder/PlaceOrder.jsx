@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
+import "./PlaceOrder.css";
 
 function PlaceOrder() {
   return (
-    <div>PlaceOrder</div>
+    <>
+    <div className="place-order">
+      
+    </div>
+    </>
   )
 }
 
