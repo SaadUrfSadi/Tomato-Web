@@ -48,6 +48,9 @@
     top: -8px;
     right: -8px;
 }
+.navbar-right img{
+    cursor: pointer;
+}
 
 @media(max-width:1050px){
     .navbar .logo{
